@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Help Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #333;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #555;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        code {
+            font-family: Consolas, monospace;
+            color: #007acc;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Git Help Notes</h1>
+
+    <h2>Git Commands</h2>
+    <p>Check Git version:</p>
+    <pre><code>git --version</code></pre>
+    <p>Configure global user name:</p>
+    <pre><code>git config --global user.name "duheychoy"</code></pre>
+    <p>Check configured user name:</p>
+    <pre><code>git config user.name</code></pre>
+    <p>Configure global user email:</p>
+    <pre><code>git config --global user.email "duheychoy@outlook.com"</code></pre>
+    <p>Create a new directory and navigate into it:</p>
+    <pre><code>mkdir first-git
+cd first-git</code></pre>
+    <p>Initialize a Git repository:</p>
+    <pre><code>git init</code></pre>
+    <p>Add files to the staging area:</p>
+    <pre><code>git add index.html
+git add.</code></pre>
+    <p>Commit changes with a message:</p>
+    <pre><code>git commit -m "add index.html content"
+git commit -m "add index.htm content"
+git commit -m "add style.css content"
+git commit -m "add 1.txt content"</code></pre>
+    <p>Configure safe directory (example):</p>
+    <pre><code>git config --global --add safe.directory D:/git/first-git</code></pre>
+    <p>Check Git status:</p>
+    <pre><code>git status</code></pre>
+
+    <h2>File Contents</h2>
+    <p>Contents of <code>style.css</code>:</p>
+    <pre><code>body {
+    font-size: 20px;
+}</code></pre>
+
+    <h2>Other Information</h2>
+    <p>Repository link: <a href="duheychoy.github.io">duheychoy.github.io</a></p>
+    <p>Video link: <a href="https://youtu.be/FKXRiAiQFiY?si=S_AUcYBRC2GZz2y1">https://youtu.be/FKXRiAiQFiY?si=S_AUcYBRC2GZz2y1</a></p>
+</body>
+
+</html>
