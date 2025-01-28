@@ -1,4 +1,5 @@
 ===梁浩賢第2課===
+https://duheychoy.github.io/lesson2.html
 <html>
 <head>
 	<meta>charset="UTF-8">
