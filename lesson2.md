@@ -1,0 +1,10 @@
+===梁浩賢第2課===
+<html>
+<head>
+	<meta>charset="UTF-8">
+	<title>標題</title>
+</head>
+<body>
+	學習HTML+CSS
+</body>
+</html>
