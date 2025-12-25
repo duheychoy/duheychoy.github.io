@@ -1,151 +1,188 @@
 <?php
-// 目前不需要 PHP 逻辑，这里可以后续添加
+// 预留PHP逻辑区域，可后续添加动态功能（如读取链接列表、用户权限控制等）
 ?>
 <!DOCTYPE html>
 <html lang="zh-HK">
 <head>
+    <!-- 1. 基础元信息：字符编码、适配、浏览器兼容 -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https: data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' https:; connect-src 'self' https:;">
+    
+    <!-- 2. 安全相关配置：兼顾安全与功能可用性 -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https: data:; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self' https:; connect-src 'self' https:;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <title>html</title>
+    
+    <!-- 3. 页面标题：更贴合内容 -->
+    <title>mushk - 实用链接导航</title>
+    
+    <!-- 4. 样式优化：响应式、美观、交互友好 -->
     <style>
-        body {
-            color: #000000;
-            background-color: #E8E9E7;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        /* 全局重置与基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
+        body {
+            color: #333333; /* 优化文字对比度，更易阅读 */
+            background-color: #F5F5F5; /* 更柔和的背景色 */
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6; /* 行高优化，提升阅读体验 */
+            padding: 10px;
+        }
+        
+        /* 链接样式：增强交互反馈 */
         a {
-            color: #000000;
+            color: #2D67B2; /* 更舒适的链接色 */
             text-decoration: none;
+            transition: color 0.2s ease; /* 过渡动画，更丝滑 */
         }
         
         a:hover {
+            color: #1A468C; /* hover加深颜色，明确反馈 */
             text-decoration: underline;
         }
         
+        /* 容器：居中+响应式宽度 */
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
+            background: #FFFFFF; /* 白色容器，突出内容 */
+            border-radius: 8px; /* 圆角，更现代 */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* 轻微阴影，提升层次感 */
         }
         
+        /* 页面标题 */
         .site-title {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2rem;
             margin-bottom: 2rem;
+            color: #222222;
+            font-weight: 600;
         }
         
+        /* 表格样式：响应式+美观 */
         .content-table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
+            table-layout: fixed; /* 固定表格布局，适配移动端 */
         }
         
         .content-table td {
-            padding: 10px;
-            border: 1px solid #FF00FF;
+            padding: 12px 15px; /* 增大内边距，更舒适 */
+            border: 1px solid #E0E0E0; /* 柔和的边框色，替换刺眼的粉紫 */
+            word-break: break-all; /* 长链接自动换行，适配移动端 */
         }
         
+        /* 分类表头样式 */
         .section-header {
-            background-color: #E8E9E7;
+            background-color: #E8F0FE; /* 淡蓝色表头，更清爽 */
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            color: #222222;
+            width: 25%; /* 分类列固定宽度 */
+        }
+
+        /* 移动端适配：小屏幕下调整字体和内边距 */
+        @media (max-width: 768px) {
+            .site-title {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+            .content-table td {
+                padding: 10px 8px;
+                font-size: 0.9rem;
+            }
+            .section-header {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- 容器包裹所有内容，保证布局规整 -->
     <div class="container">
-        <a href="https://duheychoy.github.io/html/">
-    <h1 class="site-title">
-        <span style="color: #66FFFF">h</span><span style="color: #FFFF00">t</span><span style="color: #FF0000">m</span><span style="color: #000000">l</span>
-    </h1>
-</a>
-
+        <!-- 页面标题 -->
+        <h1 class="site-title">mushk 实用链接导航</h1>
+        
+        <!-- 链接表格：语义化结构，分类清晰 -->
         <table class="content-table">
-          
+            <!-- 第一行：个人站点 -->
             <tr>
-                <td class="section-header">html</td>
-                <td><a href="https://duheychoy.github.io/html/index.html" rel="noopener noreferrer">html</a></td>
-                <td><a href="https://duheychoy.github.io/html/learnsvg.html" rel="noopener noreferrer">SVG Tutorial</a></td>
+                <td class="section-header">个人站点</td>
+                <td><a href="https://duheychoy.github.io/" rel="noopener noreferrer" title="duheychoy的GitHub Pages">duheychoy.github.io</a></td>
+                <td><a href="https://duheychoy.github.io/mushk.html" rel="noopener noreferrer" title="mushk页面">mushk.html</a></td>
             </tr>
-          
+
+            <!-- 视频平台（合并原youtube、視頻分类） -->
             <tr>
-                <td class="section-header">格式</td>
-                <td><a href="https://duheychoy.github.io/html/htmlcss.html" rel="noopener noreferrer">htmlcss</a></td>
+                <td class="section-header">视频平台</td>
+                <td><a href="https://www.youtube.com/" rel="noopener noreferrer" title="YouTube视频平台">YouTube</a></td>
+                <td><a href="https://www.bilibili.com/" rel="noopener noreferrer" title="哔哩哔哩视频平台">Bilibili</a></td>
+            </tr>
+            <tr>
                 <td></td>
+                <td><a href="https://duheychoy.github.io/youtube.html" rel="noopener noreferrer" title="自定义YouTube页面">YouTube自定义页</a></td>
+                <td><a href="https://www.douyin.com/" rel="noopener noreferrer" title="抖音网页版">抖音</a></td>
             </tr>
-          
+
+            <!-- 特别推荐 -->
             <tr>
                 <td class="section-header">特別推荐</td>
-                <td><a href="https://fongmanching.com/" rel="noopener noreferrer">以曲結緣---方文正</a></td>
-                <td><a href="https://fongmanching.mus.hk/" rel="noopener noreferrer">fongmanching.mus.hk</a></td>
-            </tr>
-          
-            <tr>
+                <td><a href="https://fongmanching.com/" rel="noopener noreferrer" title="以曲結緣---方文正">以曲結緣---方文正</a></td>
                 <td></td>
-                <td><a href="https://fongmanching.hk/" rel="noopener noreferrer">fongmanching.hk</a></td>
-                <td><a href="https://mus.hk/fongmanching/" rel="noopener noreferrer">mus.hk/fongmanching</a></td>
             </tr>
-          
+
+            <!-- 粵曲相关 -->
             <tr>
                 <td class="section-header">粵曲網</td>
-                <td><a href="https://www.ahlap.com/" rel="noopener noreferrer">阿立粵曲天地</a></td>
-                <td><a href="https://68893333.com/" rel="noopener noreferrer">仙樂曲藝社</a></td>
+                <td><a href="https://www.ahlap.com/" rel="noopener noreferrer" title="阿立粵曲天地">阿立粵曲天地</a></td>
+                <td><a href="https://68893333.com/" rel="noopener noreferrer" title="仙樂曲藝社">仙樂曲藝社</a></td>
             </tr>
-          
             <tr>
                 <td></td>
-                <td><a href="https://ahlap.com/V_song/V_song.htm" rel="noopener noreferrer">阿立粵曲大全</a></td>
-                <td><a href="https://68893333.com/sllyric/Lyric/sllyric.htm" rel="noopener noreferrer">仙樂曲藝社曲譜集</a></td>
+                <td><a href="https://ahlap.com/V_song/V_song.htm" rel="noopener noreferrer" title="阿立粵曲大全">阿立粵曲大全</a></td>
+                <td><a href="https://68893333.com/sllyric/Lyric/sllyric.htm" rel="noopener noreferrer" title="仙樂曲藝社曲譜集">仙樂曲藝社曲譜集</a></td>
             </tr>
-          
+
+            <!-- AI工具 -->
             <tr>
-                <td class="section-header">Ai</td>
-                <td><a href="https://deepseek.com/" rel="noopener noreferrer">deepseek</a></td>
-                <td><a href="https://doubao.com/" rel="noopener noreferrer">豆包</a></td>
+                <td class="section-header">AI工具</td>
+                <td><a href="https://deepseek.com/" rel="noopener noreferrer" title="DeepSeek AI">DeepSeek</a></td>
+                <td><a href="https://doubao.com/" rel="noopener noreferrer" title="豆包AI">豆包</a></td>
             </tr>
-          
             <tr>
                 <td></td>
-                <td><a href="https://x.com/grok" rel="noopener noreferrer">X.grok</a></td>
-                <td><a href="https://kimi.moonshot.cn/" rel="noopener noreferrer">kimi</a></td>
+                <td><a href="https://x.com/grok" rel="noopener noreferrer" title="X.grok AI">X.grok</a></td>
+                <td><a href="https://kimi.moonshot.cn/" rel="noopener noreferrer" title="Kimi AI">Kimi</a></td>
             </tr>
-          
-            <tr>
-                 <td class="section-header">Git & Github</td>
-                 <td><a href="https://duheychoy.github.io/" rel="noopener noreferrer">duheychoy github</a></td>
-                <td><a href="https://duheychoy.github.io/learningwithdeepseekandgithub/learning.txt" rel="noopener noreferrer">learning</a></td>
-            </tr>
-          
+
+            <!-- 翻译工具 -->
             <tr>
                 <td class="section-header">翻譯</td>
-                <td><a href="https://translate.google.com/" rel="noopener noreferrer">GOOGLE翻譯</a></td>
+                <td><a href="https://translate.google.com/" rel="noopener noreferrer" title="Google翻译">GOOGLE翻譯</a></td>
                 <td></td>
             </tr>
-          
-            <tr>
-                <td class="section-header">視頻</td>
-                <td><a href="https://www.youtube.com/" rel="noopener noreferrer">youtube</a></td>
-                <td><a href="https://www.bilibili.com/" rel="noopener noreferrer">bilibili</a></td>
-            </tr>
-          
+
+            <!-- 博客 -->
             <tr>
                 <td class="section-header">Blog</td>
-                <td><a href="https://silverylines.blogspot.com/" rel="noopener noreferrer">筆下留情</a></td>
-                <td><a href="https://chayingluen.blogspot.hk/" rel="noopener noreferrer">之無筆言</a></td>
+                <td><a href="https://silverylines.blogspot.com/" rel="noopener noreferrer" title="筆下留情博客">筆下留情</a></td>
+                <td><a href="https://chayingluen.blogspot.hk/" rel="noopener noreferrer" title="之無筆言博客">之無筆言</a></td>
             </tr>
-          
+
+            <!-- 其他工具 -->
             <tr>
                 <td class="section-header">其他</td>
-                <td><a href="https://gmail.com/" rel="noopener noreferrer">Gmail</a></td>
-                <td><a href="https://web.telegram.org/a/" rel="noopener noreferrer">telegram web</a></td>
+                <td><a href="https://gmail.com/" rel="noopener noreferrer" title="Gmail邮箱">Gmail</a></td>
+                <td><a href="https://web.telegram.org/a/" rel="noopener noreferrer" title="Telegram网页版">Telegram Web</a></td>
             </tr>
-          
         </table>
     </div>
 </body>
